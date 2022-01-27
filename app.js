@@ -89,7 +89,7 @@ const startServer = async () => {
     app.listen(port, () => {
       console.log(`Example app listening at http://localhost:${port}`)
     })
-    etherscanApi.fetchLastThousandBlocks()
+    // etherscanApi.fetchLastThousandBlocks()
   } catch (e) {
     console.error(e)
   }
