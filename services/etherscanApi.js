@@ -42,7 +42,7 @@ class EtherscanApi {
 
   fetchBlockRecursion(hexadecimalNumber, index) {
     // должна быть 1000
-    if (index === 100) {
+    if (index === 1000) {
       return
     } else {
       setTimeout(async () => {
@@ -58,7 +58,7 @@ class EtherscanApi {
 
         await this.saveBlockTransaction(block.result)
         this.fetchBlockRecursion(hexadecimalNumber, index)
-      }, 500)
+      }, 200)
     }
 
   }
@@ -100,10 +100,10 @@ class EtherscanApi {
 
     let blockIdInHexadecimal = lastBlockInfo.result
 
-    for (let i = 0; i < 10; ++i) {
-      console.log(i + 1, '* 100 blocks')
+    // for (let i = 0; i < 10; ++i) {
+    //   console.log(i + 1, '* 100 blocks')
       await this.fetchBlockRecursion(blockIdInHexadecimal, 0)
-    }
+    // }
   }
 }
 
