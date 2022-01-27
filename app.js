@@ -12,6 +12,11 @@ const port = process.env.PORT || 3001
 app.use(cors())
 app.use(bodyParser.json())
 
+app.get('/', async (req, res) => {
+  res.json('Hello my first heroku Api')
+})
+
+
 app.get('/get_last_thousand_blocks', (req, res) => {
   etherscanApi.fetchLastThousandBlocks()
   res.json({fetching: true})
