@@ -69,8 +69,6 @@ class EtherscanApi {
     block.transactions.forEach(async transaction => {
       const updatableRecord = await Transaction.findOne({hash: transaction.hash})
 
-      // console.log(updatableRecord, 'updatableRecord')
-
       if (updatableRecord == null) {
         const transactionRecord = new Transaction({
           hash: transaction.hash,

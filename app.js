@@ -7,7 +7,7 @@ const etherscanApi = require('./services/etherscanApi')
 const { query, validationResult } = require('express-validator');
 
 const app = express()
-const port = 3001
+const port = process.env.PORT || 3001
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -84,10 +84,9 @@ const startServer = async () => {
     app.listen(port, () => {
       console.log(`Example app listening at http://localhost:${port}`)
     })
-    // etherscanApi.fetchLastThousandBlocks()
-
+    etherscanApi.fetchLastThousandBlocks()
   } catch (e) {
-
+    console.error(e)
   }
 }
 
