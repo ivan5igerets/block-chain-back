@@ -58,7 +58,7 @@ class EtherscanApi {
 
         await this.saveBlockTransaction(block.result)
         this.fetchBlockRecursion(hexadecimalNumber, index)
-      }, 200)
+      }, 500)
     }
 
   }
