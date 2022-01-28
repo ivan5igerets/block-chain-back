@@ -99,11 +99,7 @@ class EtherscanApi {
     }
 
     let blockIdInHexadecimal = lastBlockInfo.result
-
-    // for (let i = 0; i < 10; ++i) {
-    //   console.log(i + 1, '* 100 blocks')
-      await this.fetchBlockRecursion(blockIdInHexadecimal, 0)
-    // }
+    await this.fetchBlockRecursion(blockIdInHexadecimal, 0)
   }
 }
 
